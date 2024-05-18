@@ -1,0 +1,4 @@
+kubectl port-forward svc/keycloak 8080:8080 -n keycloak
+
+
+curl -v http://localhost:8080
