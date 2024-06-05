@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quarkus-keycloak-app
+  namespace: keycloak
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: quarkus-keycloak-app
+  template:
+    metadata:
+      labels:
+        app: quarkus-keycloak-app
+    spec:
+      containers:
+      - name: quarkus-keycloak-app
+        image: satanpotato/quarkus-keycloak-app:latest
+        ports:
+        - containerPort: 9090
+        env:
+        - name: SERVER_URL
+          value: http://localhost:8080/realms/bank
+        - name: CLIENT_ID
+          value: quarkus-test
+        - name: CLIENT_SECRET
+          value: ec3yST9qi7UGysNm8fg1dXW5hB6xopHp
+        - name: CONNECT_URL
+          value: http://localhost:8080/realms/bank/.well-known/openid-configuration
+

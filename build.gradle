@@ -23,9 +23,11 @@ dependencies {
     implementation 'io.quarkus:quarkus-rest'
     testImplementation 'io.quarkus:quarkus-junit5'
     testImplementation 'io.rest-assured:rest-assured'
-    implementation group: 'io.quarkus', name: 'quarkus-oidc'
+   // implementation group: 'io.quarkus', name: 'quarkus-oidc'
+    implementation 'io.quarkus:quarkus-oidc'
     
-    implementation group: 'io.quarkus', name: 'quarkus-smallrye-openapi'
+    //implementation group: 'io.quarkus', name: 'quarkus-smallrye-openapi'
+    implementation 'io.quarkus:quarkus-smallrye-openapi'
 
 
 

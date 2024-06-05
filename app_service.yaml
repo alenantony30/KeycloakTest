@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: quarkus-service
+  namespace: keycloak
+spec:
+  selector:
+    app: quarkus-app
+  ports:
+    - protocol: TCP
+      port: 9090
+      targetPort: 9090
+  type: LoadBalancer # Change to NodePort or ClusterIP as per your requirement
+

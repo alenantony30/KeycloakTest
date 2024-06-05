@@ -23,7 +23,7 @@ public class GreetingResource {
     @SecurityRequirement(name="Keycloak")
     @Produces(MediaType.TEXT_PLAIN)
     public String admin() {
-        return "Welcome to Admins page";
+        return "Welcome to Admins page\nOnly Admins can access";
     }
 
 
@@ -32,7 +32,7 @@ public class GreetingResource {
     @SecurityRequirement(name="Keycloak")
     @Produces(MediaType.TEXT_PLAIN)
     public String manager() {
-        return "Welcome to manager page";
+        return "Welcome to manager page\nAdmins and Managers can access";
     }
 
     @GET
@@ -40,6 +40,6 @@ public class GreetingResource {
     @SecurityRequirement(name="Keycloak")
     @Produces(MediaType.TEXT_PLAIN)
     public String staff() {
-        return "Welcome to staff page";
+        return "Welcome to staff page\nAdmins, Mangers and staffs can access";
     }
 }

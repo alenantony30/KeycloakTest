@@ -2,3 +2,11 @@ kubectl port-forward svc/keycloak 8080:8080 -n keycloak
 
 
 curl -v http://localhost:8080
+
+curl -X POST http://localhost:8080/auth/admin/realms \
+  -H "Content-Type: application/json" \
+  -d '{
+    "realm": "bank",
+    "enabled": true
+  }'
+
